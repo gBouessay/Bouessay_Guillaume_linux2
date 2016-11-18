@@ -1,6 +1,6 @@
 **Compte rendu**
 
-Parti 1 : 
+**Parti 1 :**
 
 créer une vm debian
 
@@ -13,4 +13,8 @@ configurer la connexion réseau de votre vm en mode "par pont" sur la vm debian_
 ensuite lancé votre vm, lancer la commande lynx
 
 puis saisir les identifiants pour vous connecter au réseau afin de pouvoir avoir accès aux sites via lynx
+
+**Parti 2 :**
+
+Création de la sous passerelle cerbere2.info-ua
 
