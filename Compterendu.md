@@ -1,6 +1,7 @@
-**Compte rendu**
+Compte rendu
+=
 
-*Parti 1 :* 
+*Parti 1 : 
 
 créer une vm debian
 
@@ -21,15 +22,28 @@ Ensuite en utilisant la commande lynx suivi d'une url valide on a accès à la p
 
 *Parti 2 :*
 
-1- configuration : connection par pont
+0- configuration : connection par pont
 
-2- aptitude install openssh-server
+1- `aptitude install openssh-server`
 
-3- ssh guillaume@ip
+2- ssh guillaume@ip
 	-> connexion sur la vm reussui
-   ssh root@ip
+   `ssh root@ip`
     -> connexion impossible
 
     ON ne peut pas se connecter en ssh avec l'utilisateur root
 
-4-
+3- Pour modifier le port d'écoute ssh 
+	modifier le ficher /etc/ssh/sshd_config
+	Puis remplacer "port 22" par "port 26"
+	Ensuite redémarrer le service : /etc/init.d/ssh restart
+
+4- Pour se connecter en ssh sur notre vm gateway maintenant utiliser : ssh user@ip -p 26
+
+	`ssh-keygen -t rsa`
+	`ssh-copy-id -i .ssh/id_rsa.pub guillaume@192.168.99.217 -p 26`
+	(pb rencontré "sign_and_send_pubkey: signing failed: agent refused operation" : solution ssh-add)
+	`ssh guillaume@192.168.99.217 -p 26 `
+
+5- Installation server dhcp 
+	`sudo apt-get install isc-dhcp-server`
